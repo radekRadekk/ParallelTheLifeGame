@@ -11,10 +11,11 @@
 | Size of board                    | -size          | e.g. 1000        |
 | Number of threads                | -t             | e.g. 4           |
 | Name of output file              | -out           | e.g. example.gif |
+| Data fragmentation method        | -frag          | SQU / LIN        |
 
 **Example run:** 
 
-./Life -mode PAR -i 50 -size 400 -t 8 -out result.gif
+./Life -mode PAR -i 500 -size 1000 -t 8 -out result.gif -frag SQU
 
 ---
 
