@@ -63,7 +63,18 @@ void read_parameters(game_arguments *game_arguments, int argc, char **argv)
         }
         else if (strcmp("-out", argv[i]) == 0)
         {
-            game_arguments->output_name = argv[i+1];
+            game_arguments->output_name = argv[i + 1];
+        }
+        else if (strcmp("-frag", argv[i]) == 0)
+        {
+            if (strcmp("SQU", argv[i + 1]) == 0)
+            {
+                game_arguments->data_fragmentation = SQUARES;
+            }
+            else if (strcmp("LIN", argv[i + 1]) == 0)
+            {
+                game_arguments->data_fragmentation = LINES;
+            }
         }
     }
 
@@ -81,6 +92,7 @@ int main(int argc, char **argv)
     game_arguments.iterations_number = DEFAULT_ITERATIONS_NUMBER;
     game_arguments.threads_number = DEFAULT_THREADS_NUMBER;
     game_arguments.output_name = "out.gif";
+    game_arguments.data_fragmentation = LINES;
 
     read_parameters(&game_arguments, argc, argv);
 
